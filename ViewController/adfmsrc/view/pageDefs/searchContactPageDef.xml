@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="searchContactPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ContactOppurtunityVO3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ContactOppurtunityVO3Iterator"/>
+    <searchRegion Criteria="ContactOppurtunityVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" Binds="ContactOppurtunityVO3Iterator"
+                  id="ContactOppurtunityVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ContactOppurtunityVO3Iterator" id="ContactOppurtunityVO3">
+      <nodeDefinition DefName="model.view.ContactOppurtunityVO" Name="ContactOppurtunityVO30">
+        <AttrNames>
+          <Item Value="ContactId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ContactOppurtunityVO3Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

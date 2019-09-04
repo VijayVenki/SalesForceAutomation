@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="EditAppointment">
+    <default-activity>EditAppointment1</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="EditAppointment1">
+      <page>/EditAppointment.jsff</page>
+    </view>
+    <task-flow-call id="ContactInviteesAppointment"></task-flow-call>
+    <task-flow-call id="UserInviteesAppointment"></task-flow-call>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome>
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__3">
+      <from-activity-id>EditAppointment1</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>contact</from-outcome>
+        <to-activity-id>ContactInviteesAppointment</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>user</from-outcome>
+        <to-activity-id>UserInviteesAppointment</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__1">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

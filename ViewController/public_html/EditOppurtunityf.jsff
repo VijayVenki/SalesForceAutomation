@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGridLayout id="pgl1">
+    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+      <af:gridCell marginStart="5px" width="80%" id="gc1">
+        <af:panelBox text="Edit Opportunity" id="pb1" type="flow">
+          <f:facet name="toolbar"/>
+          <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled=""
+                     id="b1" action="back"/> <af:button actionListener="#{bindings.Rollback.execute}" text="Reset"
+                     disabled="" immediate="true" id="b2" action="back">
+            <af:resetActionListener/>
+          </af:button>
+          <af:panelFormLayout id="pfl1">
+            <af:inputText value="#{bindings.OppName1.inputValue}" label="Opportunity Name"
+                          required="#{bindings.OppName1.hints.mandatory}"
+                          columns="#{bindings.OppName1.hints.displayWidth}"
+                          maximumLength="#{bindings.OppName1.hints.precision}"
+                          shortDesc="#{bindings.OppName1.hints.tooltip}" id="it1">
+              <f:validator binding="#{bindings.OppName1.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.WinProb1.inputValue}" label="#{bindings.WinProb1.hints.label}"
+                          required="#{bindings.WinProb1.hints.mandatory}"
+                          columns="#{bindings.WinProb1.hints.displayWidth}"
+                          maximumLength="#{bindings.WinProb1.hints.precision}"
+                          shortDesc="#{bindings.WinProb1.hints.tooltip}" id="it2">
+              <f:validator binding="#{bindings.WinProb1.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.WinProb1.format}"/>
+            </af:inputText>
+            <af:inputDate value="#{bindings.CloseDate1.inputValue}" label="#{bindings.CloseDate1.hints.label}"
+                          required="#{bindings.CloseDate1.hints.mandatory}"
+                          columns="#{bindings.CloseDate1.hints.displayWidth}"
+                          shortDesc="#{bindings.CloseDate1.hints.tooltip}" id="id1">
+              <f:validator binding="#{bindings.CloseDate1.validator}"/>
+              <af:convertDateTime pattern="#{bindings.CloseDate1.format}"/>
+            </af:inputDate>
+            <af:selectOneChoice value="#{bindings.PrimaryContact1.inputValue}" label="#{bindings.PrimaryContact1.label}"
+                                required="#{bindings.PrimaryContact1.hints.mandatory}"
+                                shortDesc="#{bindings.PrimaryContact1.hints.tooltip}" id="soc1">
+              <f:selectItems value="#{bindings.PrimaryContact1.items}" id="si1"/>
+              <f:validator binding="#{bindings.PrimaryContact1.validator}"/>
+            </af:selectOneChoice>
+            <af:inputText value="#{bindings.SalesStage1.inputValue}" label="#{bindings.SalesStage1.hints.label}"
+                          required="#{bindings.SalesStage1.hints.mandatory}"
+                          columns="#{bindings.SalesStage1.hints.displayWidth}"
+                          maximumLength="#{bindings.SalesStage1.hints.precision}"
+                          shortDesc="#{bindings.SalesStage1.hints.tooltip}" id="it3">
+              <f:validator binding="#{bindings.SalesStage1.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.SalesMeathod1.inputValue}" label="#{bindings.SalesMeathod1.hints.label}"
+                          required="#{bindings.SalesMeathod1.hints.mandatory}"
+                          columns="#{bindings.SalesMeathod1.hints.displayWidth}"
+                          maximumLength="#{bindings.SalesMeathod1.hints.precision}"
+                          shortDesc="#{bindings.SalesMeathod1.hints.tooltip}" id="it4">
+              <f:validator binding="#{bindings.SalesMeathod1.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.SalesChannel1.inputValue}" label="#{bindings.SalesChannel1.hints.label}"
+                          required="#{bindings.SalesChannel1.hints.mandatory}"
+                          columns="#{bindings.SalesChannel1.hints.displayWidth}"
+                          maximumLength="#{bindings.SalesChannel1.hints.precision}"
+                          shortDesc="#{bindings.SalesChannel1.hints.tooltip}" id="it5">
+              <f:validator binding="#{bindings.SalesChannel1.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Budgeted1.inputValue}" label="#{bindings.Budgeted1.hints.label}"
+                          required="#{bindings.Budgeted1.hints.mandatory}"
+                          columns="#{bindings.Budgeted1.hints.displayWidth}"
+                          maximumLength="#{bindings.Budgeted1.hints.precision}"
+                          shortDesc="#{bindings.Budgeted1.hints.tooltip}" id="it6">
+              <f:validator binding="#{bindings.Budgeted1.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.BudgetAmount1.inputValue}" label="#{bindings.BudgetAmount1.hints.label}"
+                          required="#{bindings.BudgetAmount1.hints.mandatory}"
+                          columns="#{bindings.BudgetAmount1.hints.displayWidth}"
+                          maximumLength="#{bindings.BudgetAmount1.hints.precision}"
+                          shortDesc="#{bindings.BudgetAmount1.hints.tooltip}" id="it7">
+              <f:validator binding="#{bindings.BudgetAmount1.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.BudgetAmount1.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.EstimatedDuration1.inputValue}"
+                          label="#{bindings.EstimatedDuration1.hints.label}"
+                          required="#{bindings.EstimatedDuration1.hints.mandatory}"
+                          columns="#{bindings.EstimatedDuration1.hints.displayWidth}"
+                          maximumLength="#{bindings.EstimatedDuration1.hints.precision}"
+                          shortDesc="#{bindings.EstimatedDuration1.hints.tooltip}" id="it8">
+              <f:validator binding="#{bindings.EstimatedDuration1.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.RiskLevel1.inputValue}" label="#{bindings.RiskLevel1.hints.label}"
+                          required="#{bindings.RiskLevel1.hints.mandatory}"
+                          columns="#{bindings.RiskLevel1.hints.displayWidth}"
+                          maximumLength="#{bindings.RiskLevel1.hints.precision}"
+                          shortDesc="#{bindings.RiskLevel1.hints.tooltip}" id="it9">
+              <f:validator binding="#{bindings.RiskLevel1.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.DecisionLevel1.inputValue}" label="#{bindings.DecisionLevel1.hints.label}"
+                          required="#{bindings.DecisionLevel1.hints.mandatory}"
+                          columns="#{bindings.DecisionLevel1.hints.displayWidth}"
+                          maximumLength="#{bindings.DecisionLevel1.hints.precision}"
+                          shortDesc="#{bindings.DecisionLevel1.hints.tooltip}" id="it10">
+              <f:validator binding="#{bindings.DecisionLevel1.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.OppDocument1.inputValue}" label="#{bindings.OppDocument1.hints.label}"
+                          required="#{bindings.OppDocument1.hints.mandatory}"
+                          columns="#{bindings.OppDocument1.hints.displayWidth}"
+                          maximumLength="#{bindings.OppDocument1.hints.precision}"
+                          shortDesc="#{bindings.OppDocument1.hints.tooltip}" id="it11">
+              <f:validator binding="#{bindings.OppDocument1.validator}"/>
+            </af:inputText>
+          </af:panelFormLayout>
+        </af:panelBox>
+      </af:gridCell>
+      <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2"/>
+    </af:gridRow>
+  </af:panelGridLayout>
+</ui:composition>

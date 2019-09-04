@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/Search.jspx" usageId="view_SearchPageDef"/>
+    <page path="/Create.jspx" usageId="view_CreatePageDef"/>
+    <page path="/Edit.jspx" usageId="view_EditPageDef"/>
+    <page path="/OppurtunityCreate.jspx" usageId="view_OppurtunityCreatePageDef"/>
+    <page path="/untitled1.jspx" usageId="view_untitled1PageDef"/>
+    <page path="/Searchaccount.jsf" usageId="view_SearchaccountPageDef"/>
+    <page path="/CreateAccount.jsf" usageId="view_CreateAccountPageDef"/>
+    <page path="/Searchaccount.jsff" usageId="view_SearchaccountPageDef1"/>
+    <page path="/RunAccount.jsf" usageId="view_untitled2PageDef"/>
+    <page path="/CreateAccount.jsff" usageId="view_CreateAccountPageDef1"/>
+    <page path="/SearchAccountAppointment.jsff" usageId="view_SearchAccountAppointmentPageDef"/>
+    <page path="/EditAccount.jsff" usageId="view_EditAccountPageDef"/>
+    <page path="/ViewAccountAppointment.jsff" usageId="view_ViewAccountAppointmentPageDef"/>
+    <page path="/CreateAccountAppointment.jsff" usageId="view_CreateAccountAppointmentPageDef"/>
+    <page path="/searchcontactaccount.jsff" usageId="view_searchcontactaccountPageDef"/>
+    <page path="/editcontactaccount.jsff" usageId="view_editcontactaccountPageDef"/>
+    <page path="/createcontactaccount.jsff" usageId="view_createcontactaccountPageDef"/>
+    <page path="/searchtaskacc.jsff" usageId="view_searchtaskaccPageDef"/>
+    <page path="/createtaskacc.jsff" usageId="view_createtaskaccPageDef"/>
+    <page path="/edittaskacc.jsff" usageId="view_edittaskaccPageDef"/>
+    <page path="/ViewAccOpp.jsff" usageId="view_ViewAccOppPageDef"/>
+    <page path="/CreateAccOpp.jsff" usageId="view_CreateAccOppPageDef"/>
+    <page path="/EditAccOpp.jsff" usageId="view_EditAccOppPageDef"/>
+    <page path="/viewOppurtunity.jsff" usageId="view_viewOppurtunityPageDef"/>
+    <page path="/CreateOppurtunities.jsff" usageId="view_CreateOppurtunitiesPageDef"/>
+    <page path="/EditOppurtunity.jsff" usageId="view_EditOppurtunityPageDef"/>
+    <page path="/RunOppurtunity.jsf" usageId="view_RunOppurtunityPageDef"/>
+    <page path="/viewcontactinteraction.jsff" usageId="view_viewcontactinteractionPageDef"/>
+    <page path="/createoppinteraction.jsff" usageId="view_createoppinteractionPageDef"/>
+    <page path="/editoppinteraction.jsff" usageId="view_editoppinteractionPageDef"/>
+    <page path="/searchopprevenue.jsff" usageId="view_searchopprevenuePageDef"/>
+    <page path="/createopprevenue.jsff" usageId="view_createopprevenuePageDef"/>
+    <page path="/editopprevenue.jsff" usageId="view_editopprevenuePageDef"/>
+    <page path="/searchContact.jsff" usageId="view_searchContactPageDef"/>
+    <page path="/untitled2.jsf" usageId="view_untitled2PageDef1"/>
+    <page path="/untitled3.jsf" usageId="view_untitled3PageDef"/>
+    <page path="/searchaccount.jsff" usageId="view_SearchaccountPageDef"/>
+    <page path="/Demo.jsf" usageId="view_DemoPageDef"/>
+    <page path="/EditAppointment.jsff" usageId="view_EditAppointmentPageDef"/>
+    <page path="/EditContact.jsff" usageId="view_EditContactPageDef"/>
+    <page path="/Edittaskf.jsff" usageId="view_EdittaskfPageDef"/>
+    <page path="/Run.jsf" usageId="view_RunPageDef"/>
+    <page path="/EditOppurtunityf.jsff" usageId="view_EditOppurtunityfPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_SearchPageDef" path="view.pageDefs.SearchPageDef"/>
+    <page id="view_CreatePageDef" path="view.pageDefs.CreatePageDef"/>
+    <page id="view_EditPageDef" path="view.pageDefs.EditPageDef"/>
+    <page id="view_OppurtunityCreatePageDef" path="view.pageDefs.OppurtunityCreatePageDef"/>
+    <page id="view_untitled1PageDef" path="view.pageDefs.untitled1PageDef"/>
+    <page id="view_SearchaccountPageDef" path="view.pageDefs.SearchaccountPageDef"/>
+    <page id="view_CreateAccountPageDef" path="view.pageDefs.CreateAccountPageDef"/>
+    <page id="view_SearchaccountPageDef1" path="view.pageDefs.SearchaccountPageDef1"/>
+    <page id="view_untitled2PageDef" path="view.pageDefs.untitled2PageDef"/>
+    <page id="view_CreateAccountPageDef1" path="view.pageDefs.CreateAccountPageDef1"/>
+    <page id="view_SearchAccountAppointmentPageDef" path="view.pageDefs.SearchAccountAppointmentPageDef"/>
+    <page id="view_EditAccountPageDef" path="view.pageDefs.EditAccountPageDef"/>
+    <page id="view_ViewAccountAppointmentPageDef" path="view.pageDefs.ViewAccountAppointmentPageDef"/>
+    <page id="view_CreateAccountAppointmentPageDef" path="view.pageDefs.CreateAccountAppointmentPageDef"/>
+    <page id="view_searchcontactaccountPageDef" path="view.pageDefs.searchcontactaccountPageDef"/>
+    <page id="view_editcontactaccountPageDef" path="view.pageDefs.editcontactaccountPageDef"/>
+    <page id="view_createcontactaccountPageDef" path="view.pageDefs.createcontactaccountPageDef"/>
+    <page id="view_searchtaskaccPageDef" path="view.pageDefs.searchtaskaccPageDef"/>
+    <page id="view_createtaskaccPageDef" path="view.pageDefs.createtaskaccPageDef"/>
+    <page id="view_edittaskaccPageDef" path="view.pageDefs.edittaskaccPageDef"/>
+    <page id="view_ViewAccOppPageDef" path="view.pageDefs.ViewAccOppPageDef"/>
+    <page id="view_CreateAccOppPageDef" path="view.pageDefs.CreateAccOppPageDef"/>
+    <page id="view_EditAccOppPageDef" path="view.pageDefs.EditAccOppPageDef"/>
+    <page id="view_viewOppurtunityPageDef" path="view.pageDefs.viewOppurtunityPageDef"/>
+    <page id="view_CreateOppurtunitiesPageDef" path="view.pageDefs.CreateOppurtunitiesPageDef"/>
+    <page id="view_EditOppurtunityPageDef" path="view.pageDefs.EditOppurtunityPageDef"/>
+    <page id="view_RunOppurtunityPageDef" path="view.pageDefs.RunOppurtunityPageDef"/>
+    <page id="view_viewcontactinteractionPageDef" path="view.pageDefs.viewcontactinteractionPageDef"/>
+    <page id="view_createoppinteractionPageDef" path="view.pageDefs.createoppinteractionPageDef"/>
+    <page id="view_editoppinteractionPageDef" path="view.pageDefs.editoppinteractionPageDef"/>
+    <page id="view_searchopprevenuePageDef" path="view.pageDefs.searchopprevenuePageDef"/>
+    <page id="view_createopprevenuePageDef" path="view.pageDefs.createopprevenuePageDef"/>
+    <page id="view_editopprevenuePageDef" path="view.pageDefs.editopprevenuePageDef"/>
+    <page id="view_searchContactPageDef" path="view.pageDefs.searchContactPageDef"/>
+    <page id="view_untitled2PageDef1" path="view.pageDefs.untitled2PageDef1"/>
+    <page id="view_untitled3PageDef" path="view.pageDefs.untitled3PageDef"/>
+    <page id="view_DemoPageDef" path="view.pageDefs.DemoPageDef"/>
+    <page id="view_EditAppointmentPageDef" path="view.pageDefs.EditAppointmentPageDef"/>
+    <page id="view_EditContactPageDef" path="view.pageDefs.EditContactPageDef"/>
+    <page id="view_EdittaskfPageDef" path="view.pageDefs.EdittaskfPageDef"/>
+    <page id="view_RunPageDef" path="view.pageDefs.RunPageDef"/>
+    <page id="view_EditOppurtunityfPageDef" path="view.pageDefs.EditOppurtunityfPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model.entities"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

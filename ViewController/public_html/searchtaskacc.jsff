@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout layout="vertical" id="pgl1">
+    <af:panelHeader text="Tasks" id ="ph1">
+       <af:button id="b1"
+                 actionListener="#{bindings.CreateInsert.execute}" disabled="#{!bindings.CreateInsert.enabled}"
+                 action="create" text="Create"/>
+      <af:button id="b2" action="back" text="back"/>
+      <af:query id="qryId1" headerText="Search" disclosed="true" value="#{bindings.TasksQuery1.queryDescriptor}"
+                model="#{bindings.TasksQuery1.queryModel}" queryListener="#{bindings.TasksQuery1.processQuery}"
+                queryOperationListener="#{bindings.TasksQuery1.processQueryOperation}" resultComponentId="::resId1"/>
+    </af:panelHeader>
+    <af:table value="#{bindings.TasksVO21.collectionModel}" var="row" rows="#{bindings.TasksVO21.rangeSize}"
+              emptyText="#{bindings.TasksVO21.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" selectedRowKeys="#{bindings.TasksVO21.collectionModel.selectedRow}"
+              selectionListener="#{bindings.TasksVO21.collectionModel.makeCurrent}" rowSelection="single"
+              fetchSize="#{bindings.TasksVO21.rangeSize}" filterModel="#{bindings.TasksQuery1.queryDescriptor}"
+              filterVisible="true" queryListener="#{bindings.TasksQuery1.processQuery}" varStatus="vs" id="resId1">
+      <af:column sortProperty="#{bindings.TasksVO21.hints.TaskName.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.TasksVO21.hints.TaskName.label}" id="resId1c1">
+        <af:link shortDesc="#{bindings.TasksVO21.hints.TaskName.tooltip}" id="ot1" text="#{row.TaskName}"
+                 action="edit"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.TasksVO21.hints.DueDate.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.TasksVO21.hints.DueDate.label}" id="resId1c2">
+        <f:facet name="filter">
+          <af:inputDate value="#{bindings.TasksQuery1.queryDescriptor.filterConjunctionCriterion.criterionMap.DueDate.value}"
+                        id="id1">
+            <af:convertDateTime pattern="#{bindings.TasksVO21.hints.DueDate.format}"/>
+          </af:inputDate>
+        </f:facet>
+        <af:outputText value="#{row.DueDate}" shortDesc="#{bindings.TasksVO21.hints.DueDate.tooltip}" id="ot2">
+          <af:convertDateTime pattern="#{bindings.TasksVO21.hints.DueDate.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.TasksVO21.hints.Priority.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.TasksVO21.hints.Priority.label}" id="resId1c3">
+        <af:outputText value="#{row.Priority}" shortDesc="#{bindings.TasksVO21.hints.Priority.tooltip}" id="ot3"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.TasksVO21.hints.PercentageCompletion.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.TasksVO21.hints.PercentageCompletion.label}" id="resId1c4">
+        <af:outputText value="#{row.PercentageCompletion}"
+                       shortDesc="#{bindings.TasksVO21.hints.PercentageCompletion.tooltip}" id="ot4">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.TasksVO21.hints.PercentageCompletion.format}"/>
+        </af:outputText>
+      </af:column>
+    </af:table>
+  </af:panelGroupLayout>
+</ui:composition>

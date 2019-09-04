@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Demo.jsf" id="d1">
+        <af:form id="f1">
+        <af:panelSpringboard id="ps1">
+                        <af:showDetailItem text="Home" id="sdi1" icon="/HomeIcon.png"/>
+                        <af:showDetailItem text="Customer Account" id="sdi2" icon="/ContactAccount.png">
+                    <af:region value="#{bindings.CustomerAccount1.regionModel}" id="r1"/>
+                </af:showDetailItem>
+                        <af:showDetailItem text="Contacts" id="sdi3" icon="/Contacts.png"/>
+                        <af:showDetailItem text="Tasks" id="sdi4" icon="/Tasks.png"/>
+                        <af:showDetailItem text="Oppurtunities" id="sdi5" icon="/Oppurtunities.png"/>
+                        <af:showDetailItem text="Logout" id="sdi6" icon="/Contacts.png"/>
+                    </af:panelSpringboard>
+        
+        </af:form>
+        
+    </af:document>
+</f:view>

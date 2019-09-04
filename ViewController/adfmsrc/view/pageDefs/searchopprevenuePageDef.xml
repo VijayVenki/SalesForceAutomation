@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="searchopprevenuePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RevenueItemsVO3" RangeSize="25" DataControl="AppModuleDataControl" id="RevenueItemsVO3Iterator"/>
+    <searchRegion Criteria="RevenueItemsVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="RevenueItemsVO3Iterator" id="RevenueItemsVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="RevenueItemsVO3Iterator" id="RevenueItemsVO3">
+      <nodeDefinition DefName="model.view.RevenueItemsVO" Name="RevenueItemsVO30">
+        <AttrNames>
+          <Item Value="Quantity"/>
+          <Item Value="Revenue"/>
+          <Item Value="WinProb"/>
+          <Item Value="BestCaseRevenue"/>
+          <Item Value="WorstCaseRevenue"/>
+          <Item Value="ProductId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="RevenueItemsVO3Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

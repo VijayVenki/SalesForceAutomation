@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="untitled5.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx" id="pt1">
+                <f:facet name="copyright"/>
+                <f:facet name="about"/>
+                <f:facet name="navigation"/>
+                <f:facet name="globalLinks"/>
+                <f:facet name="status"/>
+                <f:facet name="globalToolbar"/>
+                <f:facet name="globalSearch"/>
+                <f:facet name="globalTabs"/>
+                <f:facet name="welcome">
+                    <af:panelGroupLayout id="pgl1" layout="scroll">
+                        <af:panelSpringboard id="ps1" displayMode="grid">
+                            <af:showDetailItem text="Home" id="sdi1" icon="/HomeIcon.png"/>
+                            <af:showDetailItem text="Customer Account" id="sdi2" icon="/ContactAccount.png">
+                                <af:region value="#{bindings.Account2.regionModel}" id="r2"/>
+                            </af:showDetailItem>
+                            <af:showDetailItem text="Contacts" id="sdi3" icon="/Contacts.png"/>
+                            <af:showDetailItem text="Tasks" id="sdi4" icon="/Tasks.png"/>
+                            <af:showDetailItem text="Logout" id="sdi5" icon="/ContactAccount.png"/>
+                        </af:panelSpringboard>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="innerToolbar"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

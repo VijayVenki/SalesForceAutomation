@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="searchcontactaccountPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ContactsVO2" RangeSize="25" DataControl="AppModuleDataControl" id="ContactsVO2Iterator"/>
+    <searchRegion Criteria="Contacts" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ContactsVO2Iterator" id="ContactsQuery"/>
+    <iterator Binds="CustomerAccountVO1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="CustomerAccountVO1Iterator"/>
+    <searchRegion Criteria="Contacts" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ContactsVO2Iterator" id="ContactsQuery1"/>
+    <searchRegion Criteria="Contacts" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ContactsVO2Iterator" id="ContactsQuery2"/>
+    <searchRegion Criteria="Contacts" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ContactsVO2Iterator" id="ContactsQuery3"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ContactsVO2Iterator" id="ContactsVO2">
+      <nodeDefinition DefName="model.view.ContactsVO" Name="ContactsVO20">
+        <AttrNames>
+          <Item Value="ContactName"/>
+          <Item Value="Title"/>
+          <Item Value="Department"/>
+          <Item Value="WorkPhone"/>
+          <Item Value="Email"/>
+          <Item Value="InfluenceLevel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ContactsVO2Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="CustomerAccountVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="ContactsVO2Iterator" id="ContactsVO21">
+      <nodeDefinition DefName="model.view.ContactsVO" Name="ContactsVO210">
+        <AttrNames>
+          <Item Value="ContactName"/>
+          <Item Value="Title"/>
+          <Item Value="AccountId"/>
+          <Item Value="Department"/>
+          <Item Value="Address1"/>
+          <Item Value="Address2"/>
+          <Item Value="Address3"/>
+          <Item Value="WorkPhone"/>
+          <Item Value="MobilePhone"/>
+          <Item Value="Email"/>
+          <Item Value="InfluenceLevel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ContactsVO2Iterator" id="ContactsVO22">
+      <nodeDefinition DefName="model.view.ContactsVO" Name="ContactsVO220">
+        <AttrNames>
+          <Item Value="ContactName"/>
+          <Item Value="Title"/>
+          <Item Value="AccountId"/>
+          <Item Value="Department"/>
+          <Item Value="Address1"/>
+          <Item Value="Address2"/>
+          <Item Value="Address3"/>
+          <Item Value="WorkPhone"/>
+          <Item Value="MobilePhone"/>
+          <Item Value="Email"/>
+          <Item Value="InfluenceLevel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ContactsVO2Iterator" id="ContactsVO23">
+      <nodeDefinition DefName="model.view.ContactsVO" Name="ContactsVO230">
+        <AttrNames>
+          <Item Value="ContactName"/>
+          <Item Value="Title"/>
+          <Item Value="AccountId"/>
+          <Item Value="Department"/>
+          <Item Value="WorkPhone"/>
+          <Item Value="MobilePhone"/>
+          <Item Value="Email"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

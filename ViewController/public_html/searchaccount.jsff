@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout layout="vertical" id="pgl1">
+    <af:panelGroupLayout layout="vertical" id="pgl2">
+      <af:panelHeader text="Customer Account" id="ph1">
+        <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Create"
+                   disabled="#{!bindings.CreateInsert1.enabled}" id="b1" action="create"/>
+        <af:query id="qryId1" headerText="Search" disclosed="true"
+                  value="#{bindings.CustomerAccountSearchQuery1.queryDescriptor}"
+                  model="#{bindings.CustomerAccountSearchQuery1.queryModel}"
+                  queryListener="#{bindings.CustomerAccountSearchQuery1.processQuery}"
+                  queryOperationListener="#{bindings.CustomerAccountSearchQuery1.processQueryOperation}"
+                  resultComponentId="::resId1"/>
+      </af:panelHeader>
+      <af:table value="#{bindings.CustomerAccountVO12.collectionModel}" var="row"
+                rows="#{bindings.CustomerAccountVO12.rangeSize}"
+                emptyText="#{bindings.CustomerAccountVO12.viewable ? 'No data to display.' : 'Access Denied.'}"
+                rowBandingInterval="0" selectedRowKeys="#{bindings.CustomerAccountVO12.collectionModel.selectedRow}"
+                selectionListener="#{bindings.CustomerAccountVO12.collectionModel.makeCurrent}" rowSelection="single"
+                fetchSize="#{bindings.CustomerAccountVO12.rangeSize}"
+                filterModel="#{bindings.CustomerAccountSearchQuery1.queryDescriptor}" filterVisible="true"
+                queryListener="#{bindings.CustomerAccountSearchQuery1.processQuery}" varStatus="vs" id="resId1"
+                partialTriggers="::b1">
+        <af:column sortProperty="#{bindings.CustomerAccountVO12.hints.AccountName.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccountVO12.hints.AccountName.label}" id="resId1c1">
+          <af:link shortDesc="#{bindings.CustomerAccountVO12.hints.AccountName.tooltip}" id="ot1"
+                   text="#{row.AccountName}" action="edit"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccountVO12.hints.AddressLine1.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccountVO12.hints.AddressLine1.label}" id="resId1c2">
+          <af:outputText value="#{row.AddressLine1}"
+                         shortDesc="#{bindings.CustomerAccountVO12.hints.AddressLine1.tooltip}" id="ot2"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccountVO12.hints.AddressLine2.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccountVO12.hints.AddressLine2.label}" id="resId1c3">
+          <af:outputText value="#{row.AddressLine2}"
+                         shortDesc="#{bindings.CustomerAccountVO12.hints.AddressLine2.tooltip}" id="ot3"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccountVO12.hints.AddressLine3.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccountVO12.hints.AddressLine3.label}" id="resId1c4">
+          <af:outputText value="#{row.AddressLine3}"
+                         shortDesc="#{bindings.CustomerAccountVO12.hints.AddressLine3.tooltip}" id="ot4"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccountVO12.hints.AccountUrl.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccountVO12.hints.AccountUrl.label}" id="resId1c5">
+          <af:outputText value="#{row.AccountUrl}" shortDesc="#{bindings.CustomerAccountVO12.hints.AccountUrl.tooltip}"
+                         id="ot5"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccountVO12.hints.ParentAccount.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccountVO12.hints.ParentAccount.label}" id="resId1c6">
+          <af:outputText value="#{row.ParentAccount}"
+                         shortDesc="#{bindings.CustomerAccountVO12.hints.ParentAccount.tooltip}" id="ot6">
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.CustomerAccountVO12.hints.ParentAccount.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccountVO12.hints.Ceo.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccountVO12.hints.Ceo.label}" id="resId1c7">
+          <af:outputText value="#{row.Ceo}" shortDesc="#{bindings.CustomerAccountVO12.hints.Ceo.tooltip}" id="ot7"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccountVO12.hints.NoOfEmployees.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccountVO12.hints.NoOfEmployees.label}" id="resId1c8">
+          <af:outputText value="#{row.NoOfEmployees}"
+                         shortDesc="#{bindings.CustomerAccountVO12.hints.NoOfEmployees.tooltip}" id="ot8">
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.CustomerAccountVO12.hints.NoOfEmployees.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccountVO12.hints.Email.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccountVO12.hints.Email.label}" id="resId1c9">
+          <af:outputText value="#{row.Email}" shortDesc="#{bindings.CustomerAccountVO12.hints.Email.tooltip}" id="ot9"/>
+        </af:column>
+      </af:table>
+    </af:panelGroupLayout>
+  </af:panelGroupLayout>
+</ui:composition>

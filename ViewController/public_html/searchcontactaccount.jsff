@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout layout="vertical" id="pgl1">
+    <af:panelHeader text="Contacts" id="ph1">
+       <af:button id="b1"
+                 actionListener="#{bindings.CreateInsert.execute}" disabled="#{!bindings.CreateInsert.enabled}"
+                 action="create" text="Create"/>
+      <af:button id="b2" action="back" text="back"/>
+      <af:query id="qryId1" headerText="Search" disclosed="true" value="#{bindings.ContactsQuery3.queryDescriptor}"
+                model="#{bindings.ContactsQuery3.queryModel}" queryListener="#{bindings.ContactsQuery3.processQuery}"
+                queryOperationListener="#{bindings.ContactsQuery3.processQueryOperation}" resultComponentId="::resId1"/>
+    </af:panelHeader>
+    <af:table value="#{bindings.ContactsVO23.collectionModel}" var="row" rows="#{bindings.ContactsVO23.rangeSize}"
+              emptyText="#{bindings.ContactsVO23.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" selectedRowKeys="#{bindings.ContactsVO23.collectionModel.selectedRow}"
+              selectionListener="#{bindings.ContactsVO23.collectionModel.makeCurrent}" rowSelection="single"
+              fetchSize="#{bindings.ContactsVO23.rangeSize}" filterModel="#{bindings.ContactsQuery3.queryDescriptor}"
+              filterVisible="true" queryListener="#{bindings.ContactsQuery3.processQuery}" varStatus="vs" id="resId1">
+      <af:column sortProperty="#{bindings.ContactsVO23.hints.ContactName.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.ContactsVO23.hints.ContactName.label}" id="resId1c1">
+        <af:link shortDesc="#{bindings.ContactsVO23.hints.ContactName.tooltip}" id="ot1" text="#{row.ContactName}"
+                 action="edit"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.ContactsVO23.hints.Title.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.ContactsVO23.hints.Title.label}" id="resId1c2">
+        <af:outputText value="#{row.Title}" shortDesc="#{bindings.ContactsVO23.hints.Title.tooltip}" id="ot2"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.ContactsVO23.hints.AccountId.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.ContactsVO23.hints.AccountId.label}" id="resId1c3">
+        <af:outputText value="#{row.AccountId}" shortDesc="#{bindings.ContactsVO23.hints.AccountId.tooltip}" id="ot3">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.ContactsVO23.hints.AccountId.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.ContactsVO23.hints.Department.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.ContactsVO23.hints.Department.label}" id="resId1c4">
+        <af:outputText value="#{row.Department}" shortDesc="#{bindings.ContactsVO23.hints.Department.tooltip}"
+                       id="ot4"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.ContactsVO23.hints.WorkPhone.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.ContactsVO23.hints.WorkPhone.label}" id="resId1c5">
+        <af:outputText value="#{row.WorkPhone}" shortDesc="#{bindings.ContactsVO23.hints.WorkPhone.tooltip}" id="ot5">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.ContactsVO23.hints.WorkPhone.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.ContactsVO23.hints.MobilePhone.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.ContactsVO23.hints.MobilePhone.label}" id="resId1c6">
+        <af:outputText value="#{row.MobilePhone}" shortDesc="#{bindings.ContactsVO23.hints.MobilePhone.tooltip}"
+                       id="ot6">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.ContactsVO23.hints.MobilePhone.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.ContactsVO23.hints.Email.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.ContactsVO23.hints.Email.label}" id="resId1c7">
+        <af:outputText value="#{row.Email}" shortDesc="#{bindings.ContactsVO23.hints.Email.tooltip}" id="ot7"/>
+      </af:column>
+    </af:table>
+  </af:panelGroupLayout>
+  
+</ui:composition>

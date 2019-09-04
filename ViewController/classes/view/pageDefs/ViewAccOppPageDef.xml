@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="ViewAccOppPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="OpportunitiesVO6" RangeSize="25" DataControl="AppModuleDataControl" id="OpportunitiesVO6Iterator"/>
+    <searchRegion Criteria="Opportunities" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OpportunitiesVO6Iterator" id="OpportunitiesQuery"/>
+    <iterator Binds="CustomerAccountVO1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="CustomerAccountVO1Iterator"/>
+    <iterator Binds="OpportunitiesVO3" RangeSize="25" DataControl="AppModuleDataControl" id="OpportunitiesVO3Iterator"/>
+    <searchRegion Criteria="Opportunities" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OpportunitiesVO3Iterator" id="OpportunitiesQuery1"/>
+    <iterator Binds="OpportunitiesVO4" RangeSize="25" DataControl="AppModuleDataControl" id="OpportunitiesVO4Iterator"/>
+    <searchRegion Criteria="Opportunities" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OpportunitiesVO4Iterator" id="OpportunitiesQuery2"/>
+    <searchRegion Criteria="Opportunities" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="OpportunitiesVO6Iterator" id="OpportunitiesQuery3"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="OpportunitiesVO6Iterator" id="OpportunitiesVO6">
+      <nodeDefinition DefName="model.view.OpportunitiesVO" Name="OpportunitiesVO60">
+        <AttrNames>
+          <Item Value="OppName"/>
+          <Item Value="WinProb"/>
+          <Item Value="CloseDate"/>
+          <Item Value="PrimaryContact"/>
+          <Item Value="SalesStage"/>
+          <Item Value="SalesMeathod"/>
+          <Item Value="SalesChannel"/>
+          <Item Value="Budgeted"/>
+          <Item Value="BudgetAmount"/>
+          <Item Value="EstimatedDuration"/>
+          <Item Value="RiskLevel"/>
+          <Item Value="DecisionLevel"/>
+          <Item Value="OppDocument"/>
+          <Item Value="ObjectVersion"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="OpportunitiesVO6Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="CustomerAccountVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="OpportunitiesVO3Iterator" id="OpportunitiesVO3">
+      <nodeDefinition DefName="model.view.OpportunitiesVO" Name="OpportunitiesVO30">
+        <AttrNames>
+          <Item Value="OppName"/>
+          <Item Value="WinProb"/>
+          <Item Value="CloseDate"/>
+          <Item Value="SalesStage"/>
+          <Item Value="SalesMeathod"/>
+          <Item Value="SalesChannel"/>
+          <Item Value="RiskLevel"/>
+          <Item Value="DecisionLevel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OpportunitiesVO4Iterator" id="OpportunitiesVO4">
+      <nodeDefinition DefName="model.view.OpportunitiesVO" Name="OpportunitiesVO40">
+        <AttrNames>
+          <Item Value="OppName"/>
+          <Item Value="OppId"/>
+          <Item Value="WinProb"/>
+          <Item Value="CloseDate"/>
+          <Item Value="PrimaryContact"/>
+          <Item Value="SalesStage"/>
+          <Item Value="SalesMeathod"/>
+          <Item Value="SalesChannel"/>
+          <Item Value="Budgeted"/>
+          <Item Value="BudgetAmount"/>
+          <Item Value="EstimatedDuration"/>
+          <Item Value="RiskLevel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OpportunitiesVO6Iterator" id="OpportunitiesVO61">
+      <nodeDefinition DefName="model.view.OpportunitiesVO" Name="OpportunitiesVO610">
+        <AttrNames>
+          <Item Value="OppName"/>
+          <Item Value="WinProb"/>
+          <Item Value="CloseDate"/>
+          <Item Value="PrimaryContact"/>
+          <Item Value="SalesStage"/>
+          <Item Value="SalesMeathod"/>
+          <Item Value="SalesChannel"/>
+          <Item Value="BudgetAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
